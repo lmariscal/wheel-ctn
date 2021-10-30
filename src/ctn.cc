@@ -23,23 +23,24 @@ namespace act {
     while (!file.eof()) {
       std::getline(file, line);
 
-      if (line[line.size() - 1] == '\r')
-        line.pop_back();
       if (line.empty())
         continue;
       if (line.length() > numberOfWheels)
         continue;
 
-      std::transform(line.begin(), line.end(), line.begin(), [](unsigned char c){ return std::toupper(c); });
+      // Let's assume that all dictionaries will be lowercased
+      // std::transform(line.begin(), line.end(), line.begin(), [](uchar c){
+      //   return std::tolower(c);
+      // });
 
-      dictionary.insert(line);
-
-      for (i32 i = 0; i < line.size() - 1; ++i)
-        branches.insert(line.substr(0, line.size() - i - 1));
+      dictionary.insert(dictionary.end(), line);
     }
 
-    // std::cout << "Size of dictionary: " << dictionary.size() << "\n";
-    // std::cout << "Size of branches: " << branches.size() << "\n";
+    for (auto itr = dictionary.cbegin(); itr != dictionary.cend(); ++itr) {
+      for (i32 i = 0; i < (*itr).size() - 1; ++i) {
+        branches.insert(branches.end(), (*itr).substr(0, (*itr).size() - i - 1));
+      }
+    }
 
     file.close();
   }
@@ -74,18 +75,17 @@ namespace act {
 
     while (!file.eof()) {
       std::getline(file, line);
+
       if (line.empty())
         continue;
-
-      if (line[line.size() - 1] == '\r')
-        line.pop_back();
-
       if (line.length() != lettersPerWheel) {
         std::cerr << "Ill formed letters per wheel value, please rectify `" << path << "` is valid...\n";
         continue;
       }
 
-      std::transform(line.begin(), line.end(), line.begin(), [](unsigned char c){ return std::toupper(c); });
+      std::transform(line.begin(), line.end(), line.begin(), [](uchar c){
+        return std::tolower(c);
+      });
       wheels.push_back(line);
     }
 
@@ -114,8 +114,13 @@ namespace act {
     for (i32 w = 0; w < numberOfWheels; ++w)
       GetWords({ }, words, w);
 
-    for (const std::string &w : words)
+    for (std::string &w : words) {
+      // toupper, so it matches with `output.txt`
+      std::transform(w.begin(), w.end(), w.begin(), [](uchar c){
+        return std::toupper(c);
+      });
       std::cout << w << '\n';
+    }
 
     std::cout << "Found " << words.size() << " words\n";
   }

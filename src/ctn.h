@@ -23,9 +23,9 @@ namespace act {
 
     i32 lettersPerWheel = 0;
     i32 numberOfWheels  = 0;
-    std::set<std::string> branches;
-    std::set<std::string> dictionary;
     std::vector<std::string> wheels;
+    std::set<std::string> dictionary;
+    std::set<std::string> branches;
   };
 
 }
