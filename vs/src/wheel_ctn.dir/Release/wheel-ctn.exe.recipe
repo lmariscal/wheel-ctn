@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>F:\wheel-ctn\vs\x64\Release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>F:\wheel-ctn\vs\x64\Release\wheel_ctn_res</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>F:\wheel-ctn\vs\dist\bin\Release\wheel-ctn.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

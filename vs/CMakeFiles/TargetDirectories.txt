@@ -1,0 +1,4 @@
+F:/wheel-ctn/vs/CMakeFiles/ALL_BUILD.dir
+F:/wheel-ctn/vs/CMakeFiles/ZERO_CHECK.dir
+F:/wheel-ctn/vs/src/CMakeFiles/wheel_ctn.dir
+F:/wheel-ctn/vs/res/CMakeFiles/wheel_ctn_res.dir

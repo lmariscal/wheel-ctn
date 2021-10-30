@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="F:\wheel-ctn\vs\CMakeFiles\69d77177b0bf1ac5b494f5744d2c15fe\wheel_ctn_res.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\wheel-ctn\res\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="F:\wheel-ctn\vs\res\CMakeFiles\wheel_ctn_res" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{47318D60-9621-35B0-8326-BFFD2B845872}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
