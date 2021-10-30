@@ -13,17 +13,19 @@
 namespace act {
 
 std::string DataDir() {
+  char resultChar[512];
+  for (i32 i = 0; i < 512; ++i)
+    resultChar[i] = '\0';
+
 #if defined(WIN32) || defined(_WIN32)
-  char result_char[512];
-  GetModuleFileName(nullptr, result_char, MAX_PATH);
+  GetModuleFileName(nullptr, resultChar, MAX_PATH);
 #elif defined(__linux__)
-  char result_char[512];
-  ssize_t count = readlink("/proc/self/exe", result_char, 512);
+  ssize_t count = readlink("/proc/self/exe", resultChar, 512);
 #else
   std::cerr << "Unsupported OS for DistPath\n";
 #endif
 
-  std::string result = std::string(result_char);
+  std::string result = std::string(resultChar);
   std::replace(result.begin(), result.end(), '\\', '/');
   std::string::size_type pos = std::string(result).rfind("dist/");
   result                     = result.substr(0, pos + 5);
